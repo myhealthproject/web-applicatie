@@ -1,13 +1,6 @@
 'use strict';
 
-angular.module('myHealth.register', ['ngRoute'])
-
-    .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/register', {
-        templateUrl: './app/components/register/registerView.html',
-        controller: 'RegisterCtrl'
-      });
-    }])
+angular.module('myHealth.registerCtrl', ['ngRoute'])
 
     .controller('RegisterCtrl', ['$scope', function($scope) {
       $scope.sendRegisterForm = function (user) {

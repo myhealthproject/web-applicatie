@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myHealth.profile', ['ngRoute'])
+angular.module('myHealth.profileCtrl', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/profile', {
