@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myHealth" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myHealth" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myHealth" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myHealth" class="no-js"> <!--<![endif]-->
+
+<head>
+  <title>MyHealth - Webapplication</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- File imports -->
+  <link href="assets/libs/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/Main.css" rel="stylesheet">
+  <link href="assets/libs/font/css/fontello.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="assets/css/Login.css">
+
+  <!-- JS Components imports -->
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/bower_components/angular-route/angular-route.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/components/register/register.js"></script>
+  <script src="app/components/login/login.js"></script>
+
+  <!-- JS Libs import -->
+  <script src="assets/libs/jquery-1.10.1.min.js"></script>
+  <script src="assets/libs/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+      <ul class="nav nav-collapse pull-right">
+        <li><a href="#/register"><i class="icon-user"></i> Register</a></li>
+        <li><a href="#/login"><i class="icon-trophy"></i>Login</a></li>
+      </ul>
+      <div class="nav-collapse collapse"></div>
+    </div>
+  </div>
+</div>
+<div class="container login">
+  <div ng-view></div>
+</div>
+</body>
+</html>

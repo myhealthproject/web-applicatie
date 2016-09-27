@@ -1,0 +1,21 @@
+.login-form {
+  padding: 25px 10px 10px 10px;
+  width: 45%;
+  text-align: center;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  margin: 10vh auto;
+}
+
+.login-form .login-button {
+  background-color: #355267;
+}
+
+.login-form .login-button:hover {
+  background-color: #2B475C;
+}
+
+
+
+
