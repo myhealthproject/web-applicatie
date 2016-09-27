@@ -4,7 +4,7 @@ angular.module('myHealth.login', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
-    templateUrl: './app/components/login/login.html',
+    templateUrl: './app/components/login/loginView.html',
     controller: 'LoginCtrl'
   });
 }])

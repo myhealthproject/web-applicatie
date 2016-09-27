@@ -4,7 +4,7 @@ angular.module('myHealth.register', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/register', {
-        templateUrl: './app/components/register/register.html',
+        templateUrl: './app/components/register/registerView.html',
         controller: 'RegisterCtrl'
       });
     }])
