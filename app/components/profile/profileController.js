@@ -10,5 +10,7 @@ angular.module('myHealth.profileCtrl', ['ngRoute'])
     }])
 
     .controller('ProfileCtrl', ['$scope', function($scope) {
-
+        $scope.user = {
+            name: 'Arwyn Boiten'
+        };
     }]);

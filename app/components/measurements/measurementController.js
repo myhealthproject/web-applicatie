@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('myHealth.measurementsCtrl', ['ngRoute'])
+angular.module('myHealth.measurementCtrl', ['ngRoute'])
 
     
 
-    .controller('MeasurementsCtrl', ['$scope', function($scope) {
+    .controller('MeasurementCtrl', ['$scope', function($scope) {
 
     }]);

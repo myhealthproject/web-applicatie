@@ -1,0 +1,17 @@
+<!-- Navbar code snippet -->
+
+<div class="navbar" ng-controller="navbarCtrl">
+    <div class="navbar-inner">
+        <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <ul class="nav nav-collapse pull-right">
+                <li ng-if="true" ng-repeat="tab in beforeLogin() ">
+                    <a href="#{{tab.link}}"><i ng-attr-class="{{tab.icon}}"></i> {{tab.name}}</a>
+                </li>
+                <li ng-if="false" ng-repeat="tab in afterLogin() ">
+                    <a href="#{{tab.link}}"><i ng-attr-class="{{tab.icon}}"></i> {{tab.name}}</a>
+                </li>
+            </ul>
+            <div class="nav-collapse collapse"></div>
+        </div>
+    </div>
+</div>

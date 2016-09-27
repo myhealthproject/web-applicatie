@@ -1,7 +1,15 @@
 <div class="container profile">
     <div class="span3"> <img src="assets/img/mini.png" alt=""> </div>
-    <div class="span5">
-        <h1>Arwyn Boiten</h1>
-        <h3>Patient</h3>
-        <a href="#" class="hire-me"><i class="icon-paper-plane"></i> New Measurement </a> </div>
+    <div class="span4">
+        <h1 editable-text="user.name" e-form="textBtnForm">{{ user.name || "empty" }}</h1>
+        <h4>Patient</h4>
+        <br/>
+        <br/>
+        <button class="btn btn-new-measurement"><i class="fa fa-plus"></i> New Measurement </i></button>
+    </div>
+    <div class="span1">
+        <button class="btn btn-edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
+            <i class="fa fa-pencil"></i> Edit Profile
+        </button>
+    </div>
 </div>

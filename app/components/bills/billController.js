@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myHealth.billsCtrl', ['ngRoute'])
+angular.module('myHealth.billCtrl', ['ngRoute'])
 
     .controller('BillCtrl', ['$scope', function($scope) {
 

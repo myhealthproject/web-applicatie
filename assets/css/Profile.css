@@ -1,0 +1,40 @@
+.btn-edit {
+    margin: 30px auto;
+    min-width: 9vw;
+}
+
+.editable-wrap .editable-controls > input,
+.editable-wrap .editable-controls > select,
+.editable-wrap .editable-controls > textarea {
+    margin-top: 15.7px;
+    background-color: #203748;
+    color: white;
+    font-size: 29px;
+    font-weight: normal;
+}
+
+.editable-buttons button {
+    margin: 30px auto;
+    background-color: #39d084;
+    border: 1px solid #39d084;
+    border-radius: 0.50em;
+    padding: 4px 4px 4px 4px;
+}
+
+.btn-new-measurement {
+    display: inline-block;
+    *display: inline;
+    padding:20px 50px;
+    background:#39d084;
+    color:#fff;
+    text-transform:uppercase;
+    font-size:20px;
+    margin:20px 0;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+}
+.btn-new-measurement:hover {
+    text-decoration:none;
+    background:#11d170;
+}
