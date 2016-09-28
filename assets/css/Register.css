@@ -6,6 +6,27 @@
     background-color: rgba(55, 55, 55, 0.5);
 }
 
+input[type="text"]:active,
+input[type="text"]:focus {
+    background-color: rgba(70, 70, 70, 0.2);
+    color: white;
+}
+
+input[type="text"]:focus::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #fff;
+    }
+input[type="text"]:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #fff;
+        opacity:  1;
+    }
+input[type="text"]:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #fff;
+        opacity:  1;
+    }
+input[type="text"]:focus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #fff;
+    }
+
 
 
 
