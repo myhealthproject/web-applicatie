@@ -7,7 +7,7 @@
 .editable-wrap .editable-controls > select,
 .editable-wrap .editable-controls > textarea {
     margin-top: 15.7px;
-    background-color: #203748;
+    background-color: rgba(50, 50, 50, 0.2);
     color: white;
     font-size: 29px;
     font-weight: normal;

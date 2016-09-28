@@ -3,6 +3,12 @@
 .navbar .nav > li {
 	margin: 22px 22px 22px 22px;
 }
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a.active {
+	background-color: rgba(55, 55, 55, 0.2);
+}
 		
 a.brand img {
 	border-radius:50%;
@@ -16,14 +22,20 @@ a.brand img {
 	color: #39D084;
 }
 /***** Profile *****/
-	.profile h1 {
-	color:#39d084;
+.profile h1 {
+	color: white;
 	font-weight: normal;
 }
 .profile h3 {
 	color:#fff;
 	font-weight: normal;
 }
+
+.profile h4 {
+	color: grey;
+	font-weight: normal;
+}
+
 .profile p {
 	color:#fff;
 	font-size:18px;
@@ -263,6 +275,10 @@ ul.work-images li img:hover {
 
 
 .navbar-inner {
-	background-color: #355267;
+	background-color: rgba(55, 55, 55, 0.4);
+}
+
+body {
+	background: url("http://www.mrwallpaper.com/wallpapers/gradient-background.jpg");
 }
 
