@@ -3,7 +3,7 @@
     width: 45%;
     text-align: center;
     margin: 10vh auto;
-    background-color: rgba(55, 55, 55, 0.5);
+    background-color: rgba(55, 55, 55, 0.3);
 }
 
 input[type="text"]:active,
