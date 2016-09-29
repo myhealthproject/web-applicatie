@@ -1,11 +1,10 @@
  <div ng-controller="LoginCtrl">
-   <form novalidate class="login-form">
+   <form novalidate class="login-form" name="login">
        <h1>Login page</h1>
        <p>Login with an existing account.</p>
-     <input type="text" ng-model="user.username" placeholder="Username"/><br />
-     <input type="password" ng-model="user.password" placeholder="Password" /><br />
-     <a href="#" ng-click="login(user)" class="login-button">Login</a>
+     <input type="text" name="username" ng-model="user.username" placeholder="Username" required/><br />
+     <input type="password" name="password" ng-model="user.password" placeholder="Password" required/><br />
+     <a href="#" ng-click="sendLoginForm(user, login)" class="login-button">Login</a>
    </form>
-   <pre>{{user | json}}</pre>
  </div>
 

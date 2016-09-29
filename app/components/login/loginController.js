@@ -3,9 +3,9 @@
 angular.module('myHealth.loginCtrl', ['ngRoute'])
 
 
-.controller('LoginCtrl', ['$scope', function($scope) {
-  $scope.sendLoginForm = function (user) {
-      var error = '';
+.controller('LoginCtrl', ['$scope', '$http', function($scope, $http, $location) {
+  $scope.sendLoginForm = function (user, form) {
+     var error = '';
 
      if(form.$valid) {
 
@@ -20,11 +20,12 @@ angular.module('myHealth.loginCtrl', ['ngRoute'])
                  'password': user.password
              }
          };
-         $http(req).then(function callBack(response) {
-             if (response.success) {
-                 $window.location.href='/profile';
 
-                 alert(response)
+         $http(req).then(function callBack(response) {
+             if (response.data.success) {
+               alert('Gebruikers ingelogd.');s
+             } else {
+               alert("Fout: " + response.data.message);
              }
          }, function error(response) {
              alert('Response: ' + response.message);
@@ -43,12 +44,6 @@ angular.module('myHealth.loginCtrl', ['ngRoute'])
             alert("De volgende velden ontbreken: \n" + error);
         }
     }
-
-
-
-
-
-    alert("Error: " + error + "\n");
   };
 }])
 
