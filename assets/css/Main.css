@@ -283,7 +283,7 @@ body {
 				rgba(50, 50, 50, 0.1),
 				rgba(50, 50, 50, 0.1)
 			),
-			url("http://www.mrwallpaper.com/wallpapers/gradient-background.jpg");
+			url("../img/background.jpg");
 	background-size: cover;
 
 }
