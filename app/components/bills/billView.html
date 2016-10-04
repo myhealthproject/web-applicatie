@@ -1,0 +1,17 @@
+< ng-controller="LoginCtrl">
+    <h1>Rekeningen</h1>
+    <br/>
+    <tr>
+        <tr ng-repeat="x in bills">
+            <tr><td>{{ x.BillId }}</td></tr>
+            <tr><td>{{ x.UserId }}</td></tr>
+            <tr><td>{{ x.Status }}</td></tr>
+        <tr ng-repeat="y in lines">
+            <tr><td>{{ y.Billdescription }}</td></tr>
+            <tr><td>{{ y.BillCode }}</td></tr>
+            <tr><td>{{ y.BillPrice }}</td></tr>
+            </tr>
+        <br/>
+        </tr>
+    </table>
+</div>
