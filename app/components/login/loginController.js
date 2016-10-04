@@ -10,7 +10,7 @@ angular.module('myHealth.LoginCtrl', ['ngRoute', 'ngCookies'])
             $scope.sendLoginForm = function (form) {
               AuthenticationService.Login($scope.user, form, function(response) {
                 if(response.success) {
-                  AuthenticationService.SetCredentials($scope.user.username, response.key);
+                  AuthenticationService.SetCredentials($scope.user, response.key);
                   $location.path('/profile');
                 } else {
                   $scope.error = response.message;

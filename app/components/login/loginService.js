@@ -47,7 +47,7 @@ angular.module('myHealth.Authentication', ['ngRoute', 'ngCookies'])
 
                 $rootScope.globals = {
                     currentUser: {
-                        username: username,
+                        username: user.username,
                         token: token
                     }
                 };

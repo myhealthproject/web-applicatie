@@ -17,16 +17,13 @@ angular.module('myHealth.profileCtrl', ['ngRoute'])
 
                 var req = {
                     method: 'Post',
-                    url: 'http://henkdieter.com/api/profile',
+                    url: 'http://henkdieter.com/api/user/', // TODO + user_id,
                     headers: {
                         'Content-Type': 'application/json '
                     },
                     data: {
                         'fname': user.firstname,
-                        'lname': user.lastname,
-                        'password':user.password
-
-
+                        'lname': user.lastname
                     }
                 };
 
@@ -64,7 +61,8 @@ angular.module('myHealth.profileCtrl', ['ngRoute'])
 
     .controller('ProfileCtrl', ['$scope', function($scope) {
         $scope.user = {
+            uname: 'A.boiten',
             firstname: 'Arwyn',
-            lastname: 'boyten'
+            lastname: 'boiten'
         };
     }]);
