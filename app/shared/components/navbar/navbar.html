@@ -5,10 +5,10 @@
         <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
             <h1 class="pull-left"><i class="fa fa-heartbeat" style="color: rgba(256, 256, 256, 0.4)"></i> MyHealth</h1>
             <ul class="nav nav-collapse pull-right">
-                <li ng-if="true" ng-repeat="tab in beforeLogin() ">
+                <li ng-if="!loggedIn" ng-repeat="tab in tabsBeforeLogin" class="nav-item">
                     <a href="#{{tab.link}}"><i ng-attr-class="{{tab.icon}}"></i> {{tab.name}}</a>
                 </li>
-                <li ng-if="false" ng-repeat="tab in afterLogin() ">
+                <li ng-if="loggedIn" ng-repeat="tab in tabsAfterLogin" class="nav-item">
                     <a href="#{{tab.link}}"><i ng-attr-class="{{tab.icon}}"></i> {{tab.name}}</a>
                 </li>
             </ul>

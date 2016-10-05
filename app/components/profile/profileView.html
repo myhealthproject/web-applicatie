@@ -1,19 +1,23 @@
+
 <div class="container profile">
     <div class="span3"> <img src="assets/img/mini.png" alt=""> </div>
     <div class="span4">
         <h1>{{ user.uname || "empty" }}</h1>
         <br/>
+        Firstname:
         <h1 editable-text="user.firstname" e-form="textBtnForm">{{ user.firstname || "empty" }}</h1>
+        Lastname:
         <h1 editable-text="user.lastname" e-form="textBtnForm">{{ user.lastname || "empty" }}</h1>
-        <br/>
-        <h4>Patient</h4>
-        <br/>
+
         <br/>
         <button class="btn btn-new-measurement"><i class="fa fa-plus"></i> New Measurement </i></button>
+        <br/>
+        <button onclick="window.location='/#/bills'" class="btn btn-new-measurement"><i class="fa fa-credit-card"></i> Open bills </i></button>
     </div>
     <div class="span1">
-        <button class="btn btn-edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
+        <button class="btn btn-edit"  ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
             <i class="fa fa-pencil"></i> Edit Profile
         </button>
+        <button type="submit" ng-show="textBtnForm.$visible" class="btn btn-primary" ng-click="test()">save</button>
     </div>
 </div>

@@ -4,7 +4,7 @@ angular.module('myHealth.Authentication', ['ngRoute', 'ngCookies'])
 
 .factory('AuthenticationService',
     ['$http', '$cookieStore', '$rootScope', '$timeout',
-        function ($http, $cookieStore, $rootScope) {
+        function ($http, $cookieStore, $rootScope, $timeout) {
             var service = {};
 
             service.Login = function (user, form, callback) {
@@ -43,24 +43,49 @@ angular.module('myHealth.Authentication', ['ngRoute', 'ngCookies'])
                 }
             };
 
-            service.SetCredentials = function (user, token) {
+            service.SetCredentials = function (response) {
 
                 $rootScope.globals = {
                     currentUser: {
-                        username: user.username,
-                        token: token
+                        user: response.user,
+                        token: response.key
                     }
                 };
 
-                //$http.defaults.headers.common['Authorization'] = 'Basic ' + token; // jshint ignore:line
+                $http.defaults.headers.common['token'] =  response.key; // jshint ignore:line
                 $cookieStore.put('globals', $rootScope.globals);
             };
 
             service.ClearCredentials = function () {
                 $rootScope.globals = {};
                 $cookieStore.remove('globals');
-                //$http.defaults.headers.common.Authorization = 'Basic ';
+                $http.defaults.headers.common.token = '';
             };
+
+
+            service.SetAttempt = function() {
+                if($rootScope.globals.attemps == null) {
+                    $rootScope.globals.attemps = 1
+                }
+                else {
+                    $rootScope.globals = {attemps: $rootScope.globals.attemps + 1}
+                }
+
+                $cookieStore.put('globals', $rootScope.globals);
+            }
+
+            service.blockLogin = function() {
+                if($rootScope.globals.attemps >= 4){
+                    $timeout(function () {
+                        $rootScope.globals.attemps = {};
+                        $cookieStore.put('globals', $rootScope.globals);
+                    }, 180000);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
 
             return service;
         }])

@@ -1,10 +1,18 @@
- <div ng-controller="LoginCtrl">
-   <form novalidate class="login-form" name="login">
+<div ng-hide="!loginBlocked" class="alert alert-danger">
+    <strong>Error!</strong> Too many wrong login attempts.
+</div>
+
+<div ng-controller="LoginCtrl">
+   <form novalidate class="login-form" name="login" >
        <h1>Login page</h1>
-       <p>Login with an existing account.</p>
-     <input type="text" name="username" ng-model="user.username" placeholder="Username" required/><br />
-     <input type="password" name="password" ng-model="user.password" placeholder="Password" required/><br />
-     <a href="#" ng-click="sendLoginForm(login)" class="login-button">Login</a>
+       <p ng-hide="!loginBlocked">Login is blocked for 3 minutes.</p>
+       <p ng-hide="loginBlocked">Login with an existing account.</p>
+
+     <input ng-hide="loginBlocked" type="text" name="username" ng-model="user.username" placeholder="Username" required/><br />
+     <input ng-hide="loginBlocked" type="password" name="password" ng-model="user.password" placeholder="Password" required/><br />
+     <a href="#" ng-hide="loginBlocked" ng-click="sendLoginForm(login)" class="login-button" >Login</a>
    </form>
  </div>
+
+
 

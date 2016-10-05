@@ -13,7 +13,4 @@ angular.module('myHealth', [
     'config',
     'xeditable',
     'myHealth.Authentication'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/login'});
-}]);
+])

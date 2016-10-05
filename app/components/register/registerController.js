@@ -3,6 +3,7 @@
 angular.module('myHealth.registerCtrl', ['ngRoute'])
 
     .controller('RegisterCtrl', ['$scope', '$http', function($scope, $http) {
+        $scope.showAlert = false;
       $scope.sendRegisterForm = function (user, form) {
           var error = '';
           if(form.$valid) {
@@ -23,7 +24,7 @@ angular.module('myHealth.registerCtrl', ['ngRoute'])
 
               $http(req).then(function callBack(response) {
                   if (response._id != "") {
-                      alert("Er is een nieuwe gebruiker aangemaakt.");
+                      alert('User is created.');
                       $scope.user = null;
                   }
               }, function error(response) {
@@ -46,10 +47,5 @@ angular.module('myHealth.registerCtrl', ['ngRoute'])
                   alert("De volgende velden ontbreken: \n" + error);
               }
           }
-      }
-
-      $scope.createUsername = function(user){
-        var username = user.firstname.substr(0, 1)  + user.lastname;
-          $scope.user.username = username;
       }
     }]);

@@ -1,6 +1,6 @@
 angular.module('myHealth.navbarCtrl', ['ngRoute'])
 
-.controller('navbarCtrl', function ($scope) {
+.controller('navbarCtrl', function ($scope, $rootScope) {
     $scope.items = [
         {'name': 'Home', "needAuthentication": false},
         {'name': 'About', "needAuthentication": false},
@@ -8,7 +8,7 @@ angular.module('myHealth.navbarCtrl', ['ngRoute'])
         {'name': 'Logout', "needAuthentication": true}
     ];
 
-    $scope.tabsLogin = [
+    $scope.tabsBeforeLogin = [
         {
             'name': 'Register',
             'link': '/register',
@@ -21,7 +21,7 @@ angular.module('myHealth.navbarCtrl', ['ngRoute'])
         }
     ];
 
-    $scope.tabsProfile = [
+    $scope.tabsAfterLogin = [
         {
             'name': 'Profile',
             'link': '/profile',
@@ -36,14 +36,13 @@ angular.module('myHealth.navbarCtrl', ['ngRoute'])
             'name': 'Bills',
             'link': '/bills',
             'icon': 'fa fa-credit-card'
-        }
-    ]
+        },
+        {
+            'name': '',
+            'link': '/',
+            'icon': 'fa fa-sign-out'
+        }]
 
-    $scope.beforeLogin = function (scope) {
-        return $scope.tabsLogin;
-    }
 
-    $scope.afterLogin = function (scope) {
-        return $scope.tabsProfile
-    }
+    $scope.loggedIn = $rootScope.globals.currentUser;
 });
