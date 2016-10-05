@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myHealth.BillCtrl', ['ngRoute'])
+angular.module('myHealth.billCtrl', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/bills', {
