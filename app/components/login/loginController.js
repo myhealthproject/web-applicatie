@@ -7,6 +7,7 @@ angular.module('myHealth.LoginCtrl', ['ngRoute', 'ngCookies'])
         ['$scope', '$rootScope', '$location', 'AuthenticationService', function ($scope, $rootScope, $location, AuthenticationService) {
             if ($rootScope.globals.currentUser != null) {
                 AuthenticationService.ClearCredentials();
+                $rootScope.$emit('loggedOut');
             }
 
             if (AuthenticationService.blockLogin()) {
@@ -24,6 +25,7 @@ angular.module('myHealth.LoginCtrl', ['ngRoute', 'ngCookies'])
                     if(response.success) {
                         AuthenticationService.ClearCredentials();
                         AuthenticationService.SetCredentials(response);
+                        $rootScope.$emit('loggedIn');
                         $location.path('/profile');
                     } else {
                         AuthenticationService.SetAttempt();
