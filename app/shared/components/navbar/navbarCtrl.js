@@ -1,12 +1,6 @@
 angular.module('myHealth.navbarCtrl', ['ngRoute'])
 
 .controller('navbarCtrl', function ($scope, $rootScope) {
-    $scope.items = [
-        {'name': 'Home', "needAuthentication": false},
-        {'name': 'About', "needAuthentication": false},
-        {'name': 'Settings', "needAuthentication": true},
-        {'name': 'Logout', "needAuthentication": true}
-    ];
 
     $scope.tabsBeforeLogin = [
         {

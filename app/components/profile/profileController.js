@@ -9,5 +9,4 @@ angular.module('myHealth.profileCtrl', ['ngRoute'])
             lastname: $rootScope.globals.currentUser.user.lname
         };
 
-        $scope.photo_url = "https://api.adorable.io/avatars/202/" + $scope.user.firstname + ".png";
     }]);
