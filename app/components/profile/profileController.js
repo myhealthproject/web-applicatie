@@ -25,9 +25,7 @@ angular.module('myHealth.profileCtrl', ['ngRoute'])
                     'lname': $scope.user.lastname
                 }
             };
-            $http(req).success(function (response) {
-                callback(response);
-            });
+            $http(req);
             $rootScope.globals.currentUser.user.fname = $scope.user.firstname;
             $rootScope.globals.currentUser.user.lname = $scope.user.lastname;
             $scope.toggleEdit();
