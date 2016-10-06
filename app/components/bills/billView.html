@@ -1,18 +1,22 @@
 <div ng-controller="BillCtrl">
-    <h1>Rekeningen</h1>
+    <h1>Bills</h1>
     <br/>
-    <table>
-    <tr>
-        <tr ng-repeat="x in bills">
-            <tr><td>{{ x.BillId }}</td></tr>
-            <tr><td>{{ x.UserId }}</td></tr>
-            <tr><td>{{ x.Status }}</td></tr>
-        <tr ng-repeat="y in lines">
-            <tr><td>{{ y.Billdescription }}</td></tr>
-            <tr><td>{{ y.BillCode }}</td></tr>
-            <tr><td>{{ y.BillPrice }}</td></tr>
-            </tr>
-        <br/>
+
+    <table class="bill_overview">
+        <tr class="bill_titles">
+            <th>Bill ID</th>
+            <th>Lines</th>
+            <th>Status</th>
         </tr>
+        <tr class="bill_row" ng-repeat="bill in allBillsOfUser | orderBy:'-_id'">
+            <td>{{bill._id}}</td>
+            <td>
+                <p class="bill_line" ng-repeat="line in bill.lines | orderBy:'price'" ng-show="line">Description: {{line.description}} - {{line.code}} - Price: {{line.price}}</p>
+            </td>
+
+            <td>{{bill.status}}</td>
+        </tr>
+
+
     </table>
 </div>

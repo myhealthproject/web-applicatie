@@ -288,4 +288,46 @@ body {
 
 }
 
+.bill_overview {
+	background-color: rgba(55, 55, 55, 0.2);
+}
+
+
+.bill_overview .bill_titles {
+	height: 5vh;
+	background-color: rgba(55, 55, 55, 0.2);
+	color: white;
+	padding: 0 auto;
+	font-weight: 900;
+}
+
+.bill_overview tr td {
+	text-align: center;
+	min-width: 20vw;
+	max-width: 20vw;
+	border-right: 1px solid rgba(55, 55, 55, 0.2);
+	height: 5vh;
+}
+
+.bill_overview .bill_row {
+	border-top: 1px solid rgba(55, 55, 55, 0.2);
+	border-bottom: 1px solid rgba(55, 55, 55, 0.2);
+}
+
+.bill_overview .bill_line {
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid rgba(55, 55, 55, 0.2);
+	border-collapse: collapse;
+}
+
+.profile_avatar {
+	border-radius: 50%;
+	height: 250px;
+	width: 250px;
+}
+
+
+
+
 

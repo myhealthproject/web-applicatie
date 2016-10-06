@@ -31,4 +31,5 @@ angular.module('myHealth.LoginCtrl', ['ngRoute', 'ngCookies'])
                     }
                 });
             };
+
         }]);
