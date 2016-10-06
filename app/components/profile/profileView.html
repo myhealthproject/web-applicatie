@@ -5,18 +5,25 @@
         <h1>{{ user.uname || "empty" }}</h1>
         <br/>
         Firstname:
-        <h1 editable-text="user.firstname" e-form="textBtnForm">{{ user.firstname || "empty" }}</h1>
+        <h1 editable-text="user.firstname" ng-hide="showEdit" e-form="textBtnForm">{{ user.firstname || "empty" }}</h1>
+        <input type="text" ng-show="showEdit" ng-model="user.firstname">
         Lastname:
-        <h1 editable-text="user.lastname" e-form="textBtnForm">{{ user.lastname || "empty" }}</h1>
-
+        <h1 editable-text="user.lastname" ng-hide="showEdit" e-form="textBtnForm">{{ user.lastname || "empty" }}</h1>
+        <input type="text" ng-show="showEdit" ng-model="user.lastname">
         <br/>
         <button class="btn btn-new-measurement"><i class="fa fa-plus"></i> New Measurement </i></button>
         <br/>
         <button onclick="document.location.href='/#/bills'" class="btn btn-new-measurement"><i class="fa fa-credit-card"></i> Open bills </i></button>
     </div>
     <div class="span1">
-        <button class="btn btn-edit"  ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
+        <button class="btn btn-edit"  ng-click="toggleEdit()" ng-hide="showEdit">
             <i class="fa fa-pencil"></i> Edit Profile
+        </button>
+        <button class="btn btn-edit"  ng-click="edit()" ng-show="showEdit">
+            <i class="fa fa-pencil"></i> Save
+        </button>
+        <button class="btn btn-error"  ng-click="toggleEdit()" ng-show="showEdit">
+            <i class="fa fa-pencil"></i> Cancel
         </button>
         <button type="submit" ng-show="textBtnForm.$visible" class="btn btn-primary" ng-click="saveChanges()">save</button>
     </div>
