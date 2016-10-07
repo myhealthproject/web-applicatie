@@ -8,13 +8,18 @@
             <th>Lines</th>
             <th>Status</th>
         </tr>
-        <tr class="bill_row" ng-repeat="bill in allBillsOfUser | orderBy:'-_id'">
+        <tr class="bill_row" ng-repeat="bill in allBillsOfUser | orderBy: '-_id'">
             <td>{{bill._id}}</td>
             <td>
-                <p class="bill_line" ng-repeat="line in bill.lines | orderBy:'price'" ng-show="line">Description: {{line.description}} - {{line.code}} - Price: {{line.price}}</p>
+                <p class="bill_line" ng-repeat="line in bill.lines | orderBy:'price'" ng-show="line">
+                    Description: {{line.description}} <BR/>
+                    Code: {{line.code}} <BR/>
+                    Price: {{line.price}}
+                </p>
             </td>
 
-            <td>{{bill.status}}</td>
+            <td ng-if="bill.status == 'paid'" style="color: green"><i class="fa fa-check" aria-hidden="true"></i> - PAID</td>
+            <td ng-if="bill.status == 'unpaid'" style="color: indianred"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> - UNPAID</td>
         </tr>
 
 

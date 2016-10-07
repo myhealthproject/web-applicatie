@@ -37,6 +37,8 @@ angular.module('myHealth.navbarCtrl', ['ngRoute'])
             'icon': 'fa fa-sign-out'
         }];
 
+    $scope.loggedIn = $rootScope.globals.currentUser;
+
     $rootScope.$on('loggedIn', function() {
         $scope.loggedIn = $rootScope.globals.currentUser;
     });

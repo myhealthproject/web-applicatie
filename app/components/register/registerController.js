@@ -48,4 +48,8 @@ angular.module('myHealth.registerCtrl', ['ngRoute'])
               }
           }
       }
+
+        $rootScope.$on('loggedIn', function() {
+            $scope.loggedIn = $rootScope.globals.currentUser;
+        });
     }]);
